@@ -1,0 +1,43 @@
+{
+  "name": "xstate-query",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "xstate-query/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/xstate-query",
+        "main": "xstate-query/src/index.ts",
+        "tsConfig": "xstate-query/tsconfig.lib.json",
+        "assets": ["xstate-query/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs xstate-query {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "xstate-query/**/*.ts",
+          "xstate-query/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../coverage/xstate-query"
+      }
+    }
+  },
+  "tags": []
+}

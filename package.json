@@ -1,15 +1,41 @@
 {
-  "name": "anatine",
+  "name": "xstate-extensions",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "nx": "16.7.4",
-    "nx-cloud": "latest"
-  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@nx/esbuild": "16.8.1",
+    "@nx/eslint-plugin": "16.8.1",
+    "@nx/js": "16.8.1",
+    "@nx/linter": "16.8.1",
+    "@nx/vite": "16.8.1",
+    "@types/node": "20.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "@vitest/coverage-c8": "~0.32.0",
+    "@vitest/ui": "~0.34.4",
+    "esbuild": "0.19.2",
+    "eslint": "~8.46.0",
+    "eslint-config-prettier": "8.1.0",
+    "nx": "16.8.1",
+    "nx-cloud": "16.4.0",
+    "prettier": "^2.6.2",
+    "typescript": "~5.2.2",
+    "verdaccio": "^5.26.2",
+    "vite": "~4.4.9",
+    "vitest": "^0.34.4"
+  },
+  "dependencies": {
+    "@tanstack/query-core": "^4.35.2",
+    "nanostores": "^0.9.3",
+    "xstate": "^5.0.0-beta.27"
+  },
+  "nx": {
+    "includedScripts": []
+  }
 }
+
